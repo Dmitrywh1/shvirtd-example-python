@@ -1,10 +1,10 @@
 FROM python:3.8
 
+WORKDIR /app
+
 COPY requirements.txt .
 COPY main.py /app/main.py
 
 RUN pip --no-cache-dir install -q -r requirements.txt
-
-WORKDIR /app
-
-CMD ["python", "main.py"]
+ENTRYPOINT ["python"]
+CMD ["main.py"]
