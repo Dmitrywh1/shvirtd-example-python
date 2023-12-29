@@ -19,7 +19,7 @@ services:
       #- enviremoment.env
     environment:
       - DB_HOST=db
-      - DB_USER=python
+      - DB_USER=root
       - DB_PASSWORD=superstrong
       - DB_NAME=ipaddr
       - DB_TABLE=query
