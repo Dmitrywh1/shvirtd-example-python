@@ -16,7 +16,7 @@ services:
     networks:
       backend:
         ipv4_address: 172.20.0.5
-    restart: always
+    #restart: always
     #env_file:
       #- enviremoment.env
     environment:
