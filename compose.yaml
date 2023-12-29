@@ -26,9 +26,9 @@ networks:
     ipam:
      config:
        - subnet: 172.20.0.0/24
-         aux_addresses:
-           web: 172.20.0.5
-           db: 172.20.0.10
+         #aux_addresses:
+           #web: 172.20.0.5
+           #db: 172.20.0.10
 
 
 
