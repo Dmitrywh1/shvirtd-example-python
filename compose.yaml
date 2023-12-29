@@ -25,7 +25,6 @@ services:
       - DB_PASSWORD=superstrong
       - DB_NAME=ipaddr
       - DB_TABLE=query
-      - MYSQL_ROOT_PASSWORD=superstrong
     depends_on:
       - db
 
