@@ -14,7 +14,7 @@ services:
     networks:
       backend:
         ipv4_address: 172.20.0.5
-    restart: always
+    restart: on-failure
     env_file:
       - envpy.env
     depends_on:
@@ -26,9 +26,9 @@ networks:
     ipam:
      config:
        - subnet: 172.20.0.0/24
-         #aux_addresses:
-           #web: 172.20.0.5
-           #db: 172.20.0.10
+
+include:
+  - proxy.yaml
 
 
 
