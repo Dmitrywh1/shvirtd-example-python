@@ -3,3 +3,4 @@
 !requirements.txt
 !/haproxy
 !/nginx
+!enviremoment.env
