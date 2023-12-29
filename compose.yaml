@@ -20,7 +20,7 @@ services:
     environment:
       - DB_HOST=db
       - DB_USER=python
-      - DB_PASSWORD=superstrong
+      - DB_PASSWORD=strongest
       - DB_NAME=ipaddr
       - DB_TABLE=query
     depends_on:
