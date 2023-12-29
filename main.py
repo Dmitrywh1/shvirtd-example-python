@@ -5,27 +5,28 @@ import mysql.connector
 from datetime import datetime
 
 app = Flask(__name__)
-db_host=os.environ.get('DB_HOST')
-db_user=os.environ.get('DB_USER')
-db_password=os.environ.get('DB_PASSWORD')
-db_database=os.environ.get('DB_NAME')
+db_host = os.environ.get('DB_HOST')
+db_user = os.environ.get('DB_USER')
+db_password = os.environ.get('DB_PASSWORD')
+db_database = os.environ.get('DB_NAME')
 
 # Подключение к базе данных MySQL
 db = mysql.connector.connect(
-host=db_host,
-user=db_user,
-password=db_password,
-database=db_database,
-autocommit=True )
+    host=db_host,
+    user=db_user,
+    password=db_password,
+    database=db_database,
+    autocommit=True
+)
 cursor = db.cursor()
 
 # SQL-запрос для создания таблицы в БД
 create_table_query = f"""
-USE {db_database}
+USE {db_database};
 CREATE TABLE IF NOT EXISTS requests (
-id INT AUTO_INCREMENT PRIMARY KEY,
-request_date DATETIME,
-request_ip VARCHAR(255)
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    request_date DATETIME,
+    request_ip VARCHAR(255)
 )
 """
 cursor.execute(create_table_query)
