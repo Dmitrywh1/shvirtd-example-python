@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  web:
+    image: cr.yandex/crpqjs9qp1emch06cj07/pythonapp
+    networks:
+      backend:
+        ipv4_address: 172.20.0.5
+    restart: always
+    environment:
+      - DB_HOST=172.20.0.10
+      - DB_USER=pythonapp
+      - DB_PASSWORD=strongest
+      - DB_NAME=ipaddr
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
+    restart: on-failure
+    environment:
+      - DB_HOST=172.20.0.10
+      - DB_USER=pythonapp
+      - DB_PASSWORD=strongest
+      - DB_NAME=ipaddr
+      - DB_TABLE=query
+
+networks:
+  backend:
+    driver: bridge
+
