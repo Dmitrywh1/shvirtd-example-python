@@ -26,6 +26,8 @@ services:
     restart: on-failure
     env_file:
       - enviremoment.env
+    ports:
+      - "3306"
 
 networks:
   backend:
