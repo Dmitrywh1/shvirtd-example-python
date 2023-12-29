@@ -3,8 +3,8 @@ services:
   db:
     image: mysql:8
     networks:
-      backend:
-        ipv4_address: 172.20.0.10
+      backend: {}
+        #ipv4_address: 172.20.0.10
     restart: on-failure
     env_file:
       - enviremoment.env
@@ -17,8 +17,8 @@ services:
   web:
     image: cr.yandex/crpqjs9qp1emch06cj07/pythonapp:1.0.1
     networks:
-      backend:
-        ipv4_address: 172.20.0.5
+      backend: {}
+        #ipv4_address: 172.20.0.5
     restart: always
     #env_file:
       #- enviremoment.env
