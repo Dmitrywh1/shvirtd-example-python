@@ -6,8 +6,15 @@ services:
       backend:
         ipv4_address: 172.20.0.5
     restart: always
-    env_file:
-      - enviremoment.env
+    #env_file:
+      #- enviremoment.env
+    environment:
+      - DB_HOST=172.20.0.10
+      - DB_USER=pythonapp
+      - DB_PASSWORD=strongest
+      - DB_NAME=ipaddr
+      - DB_TABLE=query
+      - MYSQL_ROOT_PASSWORD=superstrong
     depends_on:
       - db
 
