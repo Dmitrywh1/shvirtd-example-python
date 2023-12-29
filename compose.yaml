@@ -20,7 +20,7 @@ services:
     #env_file:
       #- enviremoment.env
     environment:
-      - DB_HOST=db
+      - DB_HOST=172.20.0.5
       - DB_USER=root
       - DB_PASSWORD=superstrong
       - DB_NAME=ipaddr
