@@ -1,16 +1,16 @@
 version: '3.8'
 services:
   web:
-    image: cr.yandex/crpqjs9qp1emch06cj07/pythonapp
+    image: cr.yandex/crpqjs9qp1emch06cj07/pythonapp:1.0.0
     networks:
       backend:
         ipv4_address: 172.20.0.5
     restart: always
     environment:
-      - DB_HOST=172.20.0.10
-      - DB_USER=pythonapp
-      - DB_PASSWORD=strongest
-      - DB_NAME=ipaddr
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
     depends_on:
       - db
 
@@ -21,11 +21,11 @@ services:
         ipv4_address: 172.20.0.10
     restart: on-failure
     environment:
-      - DB_HOST=172.20.0.10
-      - DB_USER=pythonapp
-      - DB_PASSWORD=strongest
-      - DB_NAME=ipaddr
-      - DB_TABLE=query
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_TABLE=${DB_TABLE}
 
 networks:
   backend:
