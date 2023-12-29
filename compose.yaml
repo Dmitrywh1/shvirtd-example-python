@@ -3,7 +3,7 @@ services:
   db:
     image: mysql:8
     networks:
-      backend: {172.20.0.10}
+      - backend
         #ipv4_address: 172.20.0.10
     restart: on-failure
     env_file:
@@ -17,7 +17,7 @@ services:
   web:
     image: cr.yandex/crpqjs9qp1emch06cj07/pythonapp:1.0.1
     networks:
-      backend: {172.20.0.5}
+      - backend
         #ipv4_address: 172.20.0.5
     restart: always
     #env_file:
@@ -37,6 +37,9 @@ networks:
     ipam:
      config:
        - subnet: 172.20.0.0/24
+         aux_addresses:
+           web: 172.20.0.5
+           db: 172.20.0.10
 
 
 
