@@ -20,6 +20,10 @@ services:
     depends_on:
       - db
 
+include:
+  - proxy.yaml
+
+
 networks:
   backend:
     driver: bridge
@@ -27,8 +31,6 @@ networks:
      config:
        - subnet: 172.20.0.0/24
 
-include:
-  - proxy.yaml
 
 
 
