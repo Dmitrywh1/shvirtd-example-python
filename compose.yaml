@@ -19,6 +19,7 @@ services:
     #restart: always
     #env_file:
       #- enviremoment.env
+    entrypoint: ["/bin/bash"]
     environment:
       - DB_HOST=172.20.0.5
       - DB_USER=root
