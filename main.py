@@ -21,7 +21,7 @@ cursor = db.cursor()
 
 # SQL-запрос для создания таблицы в БД
 create_table_query = f"""
-USE {db_database};
+USE {db_database}
 CREATE TABLE IF NOT EXISTS requests (
 id INT AUTO_INCREMENT PRIMARY KEY,
 request_date DATETIME,
