@@ -7,12 +7,7 @@ services:
         #ipv4_address: 172.20.0.10
     restart: on-failure
     env_file:
-      - enviremoment.env
-    environment:
-      - MYSQL_ROOT_PASSWORD=superstrong
-      - MYSQL_DATABASE=ipaddr
-      - MYSQL_USER=python
-      - MYSQL_PASSWORD=strongest
+      - envdb.env
 
   web:
     image: cr.yandex/crpqjs9qp1emch06cj07/pythonapp:1.0.1
@@ -20,14 +15,8 @@ services:
       - backend
         #ipv4_address: 172.20.0.5
     restart: always
-    #env_file:
-      #- enviremoment.env
-    environment:
-      - DB_HOST=db
-      - DB_USER=python
-      - DB_PASSWORD=strongest
-      - DB_NAME=ipaddr
-      - DB_TABLE=query
+    env_file:
+      - envpy.env
     depends_on:
       - db
 
