@@ -6,5 +6,5 @@ COPY requirements.txt .
 COPY main.py /app/main.py
 
 RUN pip --no-cache-dir install -q -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["main.py"]
+
+CMD ["python", "main.py"]

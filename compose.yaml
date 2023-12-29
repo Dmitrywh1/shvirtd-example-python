@@ -8,8 +8,6 @@ services:
     restart: on-failure
     env_file:
       - enviremoment.env
-    expose:
-      - "3306"
 
   web:
     image: cr.yandex/crpqjs9qp1emch06cj07/pythonapp:1.0.0
@@ -19,7 +17,6 @@ services:
     #restart: always
     #env_file:
       #- enviremoment.env
-    entrypoint: ["/bin/bash"]
     environment:
       - DB_HOST=172.20.0.5
       - DB_USER=root
