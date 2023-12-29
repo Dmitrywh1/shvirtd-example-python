@@ -2,12 +2,12 @@ version: '3.8'
 services:
   db:
     image: mysql:8
-    #networks:
-      #backend:
-        #ipv4_address: 172.20.0.10
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
     restart: on-failure
-    #env_file:
-      #- enviremoment.env
+    env_file:
+      - enviremoment.env
     environment:
       - MYSQL_ROOT_PASSWORD=superstrong
       - MYSQL_DATABASE=ipaddr
@@ -16,9 +16,9 @@ services:
 
   web:
     image: cr.yandex/crpqjs9qp1emch06cj07/pythonapp:1.0.1
-    #networks:
-      #backend:
-        #ipv4_address: 172.20.0.5
+    networks:
+      backend:
+        ipv4_address: 172.20.0.5
     restart: always
     #env_file:
       #- enviremoment.env
@@ -34,9 +34,9 @@ services:
 networks:
   backend:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
+    #ipam:
+      #config:
+        #- subnet: 172.20.0.0/16
 
 
 
