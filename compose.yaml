@@ -6,8 +6,13 @@ services:
       backend:
         ipv4_address: 172.20.0.10
     restart: on-failure
-    env_file:
-      - enviremoment.env
+    #env_file:
+      #- enviremoment.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=superstrong
+      - MYSQL_DATABASE=ipaddr
+      - MYSQL_USER=python
+      - MYSQL_PASSWORD=strongest
 
   web:
     image: cr.yandex/crpqjs9qp1emch06cj07/pythonapp:1.0.1
@@ -18,7 +23,7 @@ services:
     #env_file:
       #- enviremoment.env
     environment:
-      - DB_HOST=db
+      - DB_HOST=172.20.0.10
       - DB_USER=python
       - DB_PASSWORD=strongest
       - DB_NAME=ipaddr
